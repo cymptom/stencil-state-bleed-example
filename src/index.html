@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/component-tester.esm.js"></script>
+    <script nomodule src="/build/component-tester.js"></script>
+    <style>
+      body {
+        background: white;
+        text-align: center;
+        overflow: overlay;
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <my-app></my-app>
+  </body>
+
+  <script>
+
+    (async () => {
+      
+          const app = document.querySelector('my-app');
+
+          app.componentsToRender = [
+            { type: 'should-have-default-text'}, // renders 'some default text', as expected
+            { type: 'no-default-text' }, // renders with no default text, as expected
+            { text: 'Some text'}, // renders with specified text, as expected
+          ];
+          app.status = 'First render';
+      
+          await new Promise((resolve) => setTimeout(resolve, 2000));
+
+          app.componentsToRender = [
+            { type: 'no-default-text' } // seems to inherit state of the componentsToRender[0] from the previous render -- renders 'some default text'
+          ];
+          app.status = 'Second render';
+
+    })();
+
+  </script>
+</html>

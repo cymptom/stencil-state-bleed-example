@@ -1,0 +1,14 @@
+dependencies:
+  '@stencil/core': 2.6.0
+lockfileVersion: 5.2
+packages:
+  /@stencil/core/2.6.0:
+    dev: false
+    engines:
+      node: '>=12.10.0'
+      npm: '>=6.0.0'
+    hasBin: true
+    resolution:
+      integrity: sha512-QsxWayZyusnqSZrlCl81R71rA3KqFjVVQSH4E0rGN15F1GdQaFonKlHLyCOLKLig1zzC+DQkLLiUuocexuvdeQ==
+specifiers:
+  '@stencil/core': ^2.0.1
